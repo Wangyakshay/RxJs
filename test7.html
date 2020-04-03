@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	
+	<!-- https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.3.0/Rx.js -->
+
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.3.0/Rx.js"></script>
+	<!-- map() operator  with throttleTime()-->
+
+	<script type="text/javascript">
+		var observable = Rx.Observable.interval(1000);
+		observable
+		.map(function(val){
+			return val;
+		})
+		.throttleTime(2000)
+		.subscribe(
+			function(values){
+				console.log(values)
+			}
+		);
+
+		observable.unsubscribe();
+	</script>
+</body>
+</html>
+
+
+
+

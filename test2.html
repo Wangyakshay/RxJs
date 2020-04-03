@@ -1,0 +1,25 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.3.0/Rx.js"></script>
+<!-- create your observable -->
+<script type="text/javascript">
+		// console.log(Rx)
+	Rx.Observable.create(function(obs_instace){
+		// console.log(obs_instace)
+		obs_instace.next("hello");
+		obs_instace.next(10);
+		obs_instace.next(20);
+		obs_instace.error("ERROR DATA");
+		obs_instace.next(40);
+	})
+	.subscribe(
+		(response)=>{
+			console.log("emitted" , response);
+		},
+		(error)=>{
+			console.log("Error from obs" , error);
+		}
+	);
+</script>
+
+
+
+
